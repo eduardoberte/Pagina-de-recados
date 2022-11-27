@@ -9,7 +9,7 @@ logOutButton.addEventListener("click", ()=>{
     messageUpdate();
     localStorage.removeItem("loggedUser");
     setTimeout(()=>{
-        window.location.href="./index.html"
+        window.location.href="./logout.html"
     }, 1000)
 });
 

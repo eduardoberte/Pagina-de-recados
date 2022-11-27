@@ -1,0 +1,13 @@
+body{
+    width: 99%;
+    height: 99%;
+    
+}
+video{
+    width: 100vw;
+    
+}
+
+::-webkit-scrollbar {
+    display: none;
+  }
