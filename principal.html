@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Board</title>
+
+    <link rel="shortcut icon" href="./src/icon.jpg" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/principal.css">
+</head>
+<body>
+    <header class="top">
+        <div class="spoty">
+            <iframe 
+                style="border-radius:12px" 
+                src="https://open.spotify.com/embed/playlist/4DXTTfSxRXkVzgPNak1eeA?utm_source=generator&theme=0" 
+                width="100%" height="80" frameBorder="0" 
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy">
+            </iframe>
+        </div>
+        
+        <h2>Vaporwave Notes</h2>
+
+        <div >
+            <button id="logoutBtn" class="but" type="button">Logout</button>
+        </div>
+    </header>
+        
+    <main>
+        <div class="edit">
+            <h1>Criar Recado</h1>
+            <input id="description" class="desc firstInput" type="text" placeholder="Descrição"></input>
+            <input  id="content" class="cont firstInput" type="text" placeholder="Conteudo"></input>
+            <button class="createButton" id="createButton">Criar</button>
+        </div>
+
+        <div class="tableDiv">
+            <table>
+                <thead class="tHead">
+                    <tr>
+                        <td class="tdHeader">Descrição</td>
+                        <td class="tdHeader">Conteudo</td>
+                        <td class="tdHeader">Ação</td>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                  
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <div id="modal">
+
+        <h2>Edite seu recado</h2>
+        <div >
+            <input class="modalInput modalInput1" id="modalDesc" type="text" placeholder="Descrição">
+            <input class="modalInput modalInput2" id="modalCont" type="text" placeholder="Conteudo">
+        </div>
+        <div>
+            <button class="modalButton" id="modalSaveBtn" type="button">Salvar</button>
+            <button class="modalButton" id="modalCancelBtn" type="button">Cancelar</button>
+        </div>
+
+    </div>
+
+    <script src="./js/principal.js"></script>
+</body>
+</html>
