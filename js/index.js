@@ -20,9 +20,10 @@ const loginClick = document.querySelector("button").addEventListener("click", (e
       const verifyUser = db.findIndex((usuario) => email.value === usuario.email && passWord.value === usuario.password );
         
         if(verifyUser >= 0){
-            const logado = {
+            let  logado = {
                 login: db[verifyUser].email, 
-                messages: db[verifyUser].messages
+                messages: db[verifyUser].messages,
+                
             }
 
             localStorage.setItem("loggedUser",  JSON.stringify(logado));

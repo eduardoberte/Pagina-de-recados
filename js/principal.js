@@ -32,7 +32,7 @@ const createMsnButton = document.getElementById("createButton");
 createMsnButton.addEventListener('click',()=>{
     let desc = document.getElementById("description").value;
     let cont = document.getElementById("content").value;
-    let id = messages.length+1
+    let id = generateGuid();
 
     if(!desc ||!cont){
        return alert('Digite em todos os campos do recado');
@@ -130,4 +130,8 @@ function closeModal(){
     let modal = document.getElementById('modal');
     modal.style.display= 'none'
 }
+
+function generateGuid() {
+    return Math.random();
+  }
 

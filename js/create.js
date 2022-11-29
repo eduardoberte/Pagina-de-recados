@@ -44,7 +44,6 @@ function save(email,passWord,verify){
     }
 
     const verifyUser = db.some((valor) => valor.email === email.value);
-    console.log(verifyUser);
     
     if(verifyUser){
 
@@ -54,7 +53,7 @@ function save(email,passWord,verify){
     }
 
     let user = {
-    id: db.length + 1,
+    id: generateGuid(),
     email: email.value,
     password: passWord.value,
     messages:[]
@@ -82,7 +81,9 @@ function goLogin(){
     }, 1000)
 }
 
-
+function generateGuid() {
+    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+  }
 
 
 
