@@ -1,12 +1,24 @@
 body{
     width: 99%;
-    height: 99%;
+    height: 100vh;
+    
     
 }
 video{
-    width: 100vw;
     
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-8%);
 }
+
+div{
+    object-fit: cover;
+    position: relative;
+}
+
+
 
 ::-webkit-scrollbar {
     display: none;

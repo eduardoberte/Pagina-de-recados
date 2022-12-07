@@ -13,7 +13,7 @@ const loginClick = document.querySelector("button").addEventListener("click", (e
     let db =JSON.parse(localStorage.getItem("user"))|| [];
 
     if (email.value === "" || passWord.value === "") {
-        alert("preencha todos os dados")
+        alertPassword("preencha todos os dados", "warning");
         return;
       }
     
@@ -29,7 +29,7 @@ const loginClick = document.querySelector("button").addEventListener("click", (e
             localStorage.setItem("loggedUser",  JSON.stringify(logado));
             return window.location.href = './principal.html'
         }
-        alert('Credenciais incorretas')
+        alertPassword("Credenciais incorretas", "warning");
         clear(email,passWord);
 });
 
@@ -45,7 +45,8 @@ const loginEnter = document.getElementById("passWordLog").addEventListener("keyp
         let db =JSON.parse(localStorage.getItem("user"))|| [];
     
         if (email.value === "" || passWord.value === "") {
-            alert("preencha todos os dados")
+            
+            alertPassword("preencha todos os dados", "warning");
             return;
           }
         
@@ -60,7 +61,8 @@ const loginEnter = document.getElementById("passWordLog").addEventListener("keyp
                 localStorage.setItem("loggedUser",  JSON.stringify(logado));
                 return window.location.href = './principal.html'
             }
-            alert('Credenciais incorretas')
+            alertPassword("Credenciais incorretas", "warning");
+            
             clear(email,passWord);
  }
 });
@@ -70,4 +72,26 @@ function clear(email,passWord){
     email.value="";
     passWord.value="";
     
+};
+
+
+
+const alertApp = document.getElementById("alertApp") 
+
+function alertPassword(message,type){
+
+alertApp.innerHTML=""
+
+const wrapper = document.createElement("div")
+wrapper.innerHTML=`<div class="alert alert-${type} alert-dismissible" role="alert" position-absolute> 
+${message}
+</div>
+`
+
+alertApp.appendChild(wrapper)
+
+setTimeout(() => {
+  alertApp.removeChild(wrapper)
+}, 2000);
+
 };

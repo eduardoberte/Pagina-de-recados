@@ -1,8 +1,19 @@
 body{
-    background-image: url(/src/backImg5.jpg);
+    background-image: url(/src/backImg1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: fixed;
+}
+
+.alert{
+    background-color: #d581bb;
+    color: white;
+}
+
+#alertApp{
+    
+    width: 400px !important;
+    
 }
 
 .top{
@@ -226,3 +237,18 @@ table{
     border-bottom: 1px solid rgba(0, 0, 0, 0.329);
     
 }
+
+.container{
+    margin: 0px 0px 0px 0px;
+}
+
+@media(min-width: 728px) and (max-width: 1024px){
+    body{
+
+        background-image: url(/src/backImg-mobile-3.jpg);
+        
+        
+    }
+
+}
+

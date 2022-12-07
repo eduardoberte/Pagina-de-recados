@@ -24,22 +24,24 @@ document.getElementById("verifyPassWord").addEventListener("keypress", (e)=>{
 function save(email,passWord,verify){
 
     if (email.value === "" || passWord.value === "" || verify.value === "") {
-        alert("preencha todos os dados");
+        
+        alertPassword("preencha todos os dados", "warning")
         return;
     }
 
     if (passWord.value !== verify.value) {
-        alert("Senhas não são iguais");
+        alertPassword("Senhas não são iguais", "warning")
         return;
     }
 
     if(!email.value.match(/\S+@\S+.\S/)) {
-       alert("Preencha o campo com um email válido");
+        alertPassword("Preencha o campo com um email válido", "warning")
+       
           return;
     }
 
     if(passWord.length < 4) {
-        alert("preencha a senha com no mínimo 4 digitos");
+        alertPassword("preencha a senha com no mínimo 4 digitos", "warning");
         return;
     }
 
@@ -47,7 +49,7 @@ function save(email,passWord,verify){
     
     if(verifyUser){
 
-        alert("Usuario já cadastrado");
+        alertPassword("Usuario já cadastrado", "warning");
         
         return;
     }
@@ -86,5 +88,25 @@ function generateGuid() {
   }
 
 
+
+  const alertApp = document.getElementById("alertApp") 
+
+  function alertPassword(message,type){
+
+ 
+    alertApp.innerHTML=""
+    const wrapper = document.createElement("div")
+    wrapper.innerHTML+=`<div class="alert alert-${type} alert-dismissible" role="alert" > 
+    ${message}
+    </div>
+    `
+
+  alertApp.appendChild(wrapper)
+  
+  setTimeout(() => {
+    alertApp.removeChild(wrapper)
+  }, 2000);
+
+  };
 
 

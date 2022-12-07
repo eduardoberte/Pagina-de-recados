@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Message Board</title>
 
     <link rel="shortcut icon" href="./src/icon.jpg" type="image/x-icon">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/principal.css">
+
 </head>
 <body>
-    <header class="top">
+    <header class="top  ">
         <div class="spoty">
             <iframe 
                 style="border-radius:12px" 
@@ -25,13 +29,17 @@
         </div>
         
         <h2>Vaporwave Notes</h2>
+        <div id="alertApp" class="position-absolute w-25 start-50 mt-2 translate-middle-x text-center"></div>
 
         <div >
             <button id="logoutBtn" class="but" type="button">Logout</button>
         </div>
     </header>
+
+   
         
-    <main>
+    <main > 
+        
         <div class="edit">
             <h1>Criar Recado</h1>
             <input id="description" class="desc firstInput" type="text" placeholder="Descrição"></input>
@@ -70,5 +78,8 @@
     </div>
 
     <script src="./js/principal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+
 </body>
 </html>

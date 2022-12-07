@@ -35,7 +35,7 @@ createMsnButton.addEventListener('click',()=>{
     let id = generateGuid();
 
     if(!desc ||!cont){
-       return alert('Digite em todos os campos do recado');
+       return alertPassword("Digite em todos os campos do recado", "warning");
     };
 
     messages.push({id, desc, cont});
@@ -134,4 +134,28 @@ function closeModal(){
 function generateGuid() {
     return Math.random();
   }
+
+
+
+
+
+  const alertApp = document.getElementById("alertApp") 
+
+  function alertPassword(message,type){
+  
+  alertApp.innerHTML=""
+  
+  const wrapper = document.createElement("div")
+  wrapper.innerHTML=`<div class="alert alert-${type} alert-dismissible" role="alert" position-absolute> 
+  ${message}
+  </div>
+  `
+  
+  alertApp.appendChild(wrapper)
+  
+  setTimeout(() => {
+    alertApp.removeChild(wrapper)
+  }, 2000);
+  
+  };  
 
