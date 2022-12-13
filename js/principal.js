@@ -65,7 +65,7 @@ function setMessage(){
 };
 
 function deleteMessage(id){
-    const confirmDelete = confirm('Tem certeza q deseja deletar o recado?')
+    const confirmDelete = confirm('Tem certeza q deseja deletar o recado?');
 
     if(confirmDelete){
     let remove = messages.filter((message)=> message.id !== id);
